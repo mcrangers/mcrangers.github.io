@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · MC Rangers</title>
+<meta name="theme-color" content="#0d2124">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-page="admin">
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="MC Rangers home"><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"><span class="adm-tag">Admin</span></a>
+    <div id="topRight"></div>
+  </div>
+</header>
+<main class="adm wrap" id="main">
+  <!-- CONNECT (once per phone) -->
+  <section id="connect" class="hidden">
+    <form class="panel" id="connectForm" novalidate>
+      <div class="kicker">Connect this phone</div>
+      <h1 class="adm-h1">Paste your GitHub key</h1>
+      <p class="adm-sub">Only needed once on each phone. Admin saves your changes to the website through this key.</p>
+      <label for="tok">GitHub key</label>
+      <input type="password" id="tok" autocomplete="off" placeholder="github_pat_…" spellcheck="false">
+      <details>
+        <summary>How do I get a GitHub key?</summary>
+        <ol>
+          <li>GitHub → <strong>Settings → Developer settings → Personal access tokens → Fine-grained tokens</strong> → <strong>Generate new token</strong>.</li>
+          <li>Resource owner: <strong>mcrangers</strong>. Repository access: <strong>Only select repositories → mcrangers.github.io</strong> (add hike-bingo too if you want one key for both).</li>
+          <li>Permissions → Repository → <strong>Contents: Read and write</strong>.</li>
+        </ol>
+      </details>
+      <div class="adm-err" id="connectErr" role="alert"></div>
+      <button class="btn dark" type="submit" id="connectBtn">Connect</button>
+    </form>
+  </section>
+
+  <!-- EDITOR -->
+  <section id="editor" class="hidden">
+    <div class="adm-tabs" role="tablist" aria-label="Sections">
+      <button role="tab" type="button" data-tab="hikes" aria-selected="true">Hikes</button>
+      <button role="tab" type="button" data-tab="posts" aria-selected="false">Blog</button>
+      <button role="tab" type="button" data-tab="merch" aria-selected="false">Merch</button>
+      <button role="tab" type="button" data-tab="site" aria-selected="false">Settings</button>
+    </div>
+    <div id="pane"></div>
+  </section>
+</main>
+<div class="savebar hidden" id="saveBar">
+  <div class="wrap"><span id="saveMsg" role="status">You have unsaved changes</span><button class="btn" type="button" id="saveBtn">Save</button></div>
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "tagline": "Trails, sunrises and new friends. CUHK's hiking crew, out on Hong Kong's hills most weekends.",
+  "about": "MC Rangers is a student hiking club at CUHK. We plan hikes for every level, from easy coastal walks to sunrise summits, and anyone can join. Bring water, good shoes and a friend, or come alone and leave with a few.",
+  "instagram": "https://www.instagram.com/",
+  "email": "",
+  "joinForm": "",
+  "merchForm": "https://forms.gle/",
+  "showMerch": true,
+  "merchOpen": true,
+  "showPastHikes": true,
+  "showBingo": true,
+  "commentsEnabled": true,
+  "firebase": { "apiKey": "", "authDomain": "", "projectId": "", "appId": "" },
+  "commentAdmins": []
+}

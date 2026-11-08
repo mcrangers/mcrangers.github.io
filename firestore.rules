@@ -1,0 +1,29 @@
+rules_version = '2';
+// Paste this into Firebase console → Firestore Database → Rules, then Publish.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // A signed-in user with a verified CUHK email
+    function isCuhk() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email.lower().matches('.*@(link[.])?cuhk[.]edu[.]hk$');
+    }
+    // Moderators: replace with your own CUHK email(s)
+    function isModerator() {
+      return request.auth != null
+        && request.auth.token.email.lower() in ['your-id@link.cuhk.edu.hk'];
+    }
+    match /comments/{commentId} {
+      allow read: if true;
+      allow create: if isCuhk()
+        && request.resource.data.keys().hasOnly(['postId', 'text', 'name', 'uid', 'createdAt'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.postId is string && request.resource.data.postId.size() <= 120
+        && request.resource.data.name is string && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 40
+        && request.resource.data.text is string && request.resource.data.text.size() > 0 && request.resource.data.text.size() <= 1000
+        && request.resource.data.createdAt == request.time;
+      allow delete: if request.auth != null && (resource.data.uid == request.auth.uid || isModerator());
+      allow update: if false;
+    }
+  }
+}

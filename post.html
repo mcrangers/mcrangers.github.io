@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blog · MC Rangers</title>
+<meta name="description" content="A trail story from MC Rangers.">
+<meta name="theme-color" content="#0d2124">
+<meta property="og:title" content="Blog · MC Rangers">
+<meta property="og:description" content="A trail story from MC Rangers.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="icons/icon-512.png">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="blog">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="MC Rangers home"><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="hikes.html">Hikes</a><a href="blog.html" aria-current="page">Blog</a><a href="merch.html">Merch</a>
+      <a href="https://mcrangers.github.io/hike-bingo/" data-flag="showBingo" class="hidden">Trail Bingo</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <article id="article">
+    <header class="article-hero">
+      <img class="cover" id="aCover" alt="" width="1600" height="686">
+      <div class="wrap cap">
+        <a class="back-link" href="blog.html">&larr; All posts</a>
+        <div class="meta" id="aMeta"></div>
+        <h1 id="aTitle">Loading…</h1>
+      </div>
+    </header>
+    <div class="stripe-band" aria-hidden="true"></div>
+    <section class="section tight"><div class="wrap"><div class="prose" id="aBody"></div><div class="gallery" id="aGallery"></div></div></section>
+  </article>
+  <section class="section paper tight" id="commentsSec" data-flag="commentsEnabled" aria-labelledby="cH">
+    <div class="wrap"><div class="comments" id="comments">
+      <h2 id="cH">Comments</h2>
+      <p class="sub">Were you on this hike? Leave a comment. You need a CUHK email to post.</p>
+      <ul class="c-list" id="cList" aria-live="polite"></ul>
+      <div id="cBox"></div>
+    </div></div>
+  </section>
+</main>
+<footer class="site-foot">
+  <svg class="ridge-top" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V40 L1330 14 L1240 34 L1130 4 L1030 30 L940 18 L840 42 L730 10 L640 32 L520 6 L420 36 L300 16 L190 38 L90 12 L0 30Z" fill="var(--cream)"/></svg>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"><p>Hiking at CUHK and across Hong Kong.</p></div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="hikes.html">Hikes</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
+        <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" data-link="email" class="hidden">Email us</a>
+      </nav>
+    </div>
+    <div class="foot-small"><span>&copy; <span data-year></span> MC Rangers</span><a href="admin.html">Admin</a></div>
+  </div>
+</footer>
+<script src="js/site.js"></script>
+<script type="module" src="js/comments.js"></script>
+</body>
+</html>

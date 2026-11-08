@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MC Rangers · CUHK hiking club</title>
+<meta name="description" content="Hikes, trail stories and merch from MC Rangers, a CUHK student hiking club. Sign up for the next hike.">
+<meta name="theme-color" content="#0d2124">
+<meta property="og:title" content="MC Rangers · CUHK hiking club">
+<meta property="og:description" content="Hikes, trail stories and merch from MC Rangers, a CUHK student hiking club. Sign up for the next hike.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="icons/icon-512.png">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="index">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="MC Rangers home"><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a><a href="hikes.html">Hikes</a><a href="blog.html">Blog</a><a href="merch.html">Merch</a>
+      <a href="https://mcrangers.github.io/hike-bingo/" data-flag="showBingo" class="hidden">Trail Bingo</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="hero-art"><img src="images/hero-art.jpg" alt="" width="1600" height="900" fetchpriority="high"></div>
+    <div class="wrap">
+      <img class="hero-logo" src="icons/logo.png" alt="MC Rangers" width="640" height="317">
+      <h1>Find your next <em>trail.</em></h1>
+      <p class="lede" data-text="tagline"></p>
+      <div class="actions">
+        <a class="btn" href="hikes.html">See upcoming hikes</a>
+        <a class="btn ghost" href="blog.html">Read the blog</a>
+      </div>
+    </div>
+  </section>
+  <div class="stripe-band" aria-hidden="true"></div>
+
+  <section class="section" aria-labelledby="nextH">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="kicker">Sign-ups open</div><h2 id="nextH">Next hikes</h2></div><a class="more" href="hikes.html">All hikes &rarr;</a></div>
+      <div class="hikes" id="nextHikes"><div class="sk" style="height:320px"></div></div>
+    </div>
+  </section>
+
+  <section class="section paper" aria-labelledby="blogH">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="kicker">From the trail</div><h2 id="blogH">Latest from the blog</h2></div><a class="more" href="blog.html">All posts &rarr;</a></div>
+      <div class="posts" id="latestPosts"><div class="sk" style="grid-column:span 12;height:320px"></div></div>
+    </div>
+  </section>
+
+  <section class="section night" id="merchBand" data-flag="showMerch" aria-labelledby="merchH">
+    <div class="wrap merch-band">
+      <div>
+        <div class="kicker">Merch</div>
+        <h2 id="merchH" style="font-size:var(--text-xl)">Wear the trail.</h2>
+        <p>Tees and totes with the full MC Rangers logo. Orders go through a short Google Form.</p>
+        <a class="btn" href="merch.html">Shop merch</a>
+      </div>
+      <div class="imgs" id="merchImgs"></div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="aboutH">
+    <div class="wrap about">
+      <div>
+        <div class="kicker">About us</div>
+        <h2 id="aboutH" style="font-size:var(--text-xl);margin-bottom:18px">Hike with MC Rangers</h2>
+        <p data-text="about"></p>
+        <div class="links">
+          <a class="btn dark" href="#" data-link="joinForm" target="_blank" rel="noopener">Join the club</a>
+          <a class="btn ghost" href="#" data-link="instagram" target="_blank" rel="noopener">Follow on Instagram</a>
+        </div>
+      </div>
+      <div class="about-art"><img src="icons/logo.png" alt="" width="640" height="317" loading="lazy"></div>
+    </div>
+  </section>
+</main>
+<footer class="site-foot">
+  <svg class="ridge-top" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V40 L1330 14 L1240 34 L1130 4 L1030 30 L940 18 L840 42 L730 10 L640 32 L520 6 L420 36 L300 16 L190 38 L90 12 L0 30Z" fill="var(--cream)"/></svg>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"><p>Hiking at CUHK and across Hong Kong.</p></div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="hikes.html">Hikes</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
+        <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" data-link="email" class="hidden">Email us</a>
+      </nav>
+    </div>
+    <div class="foot-small"><span>&copy; <span data-year></span> MC Rangers</span><a href="admin.html">Admin</a></div>
+  </div>
+</footer>
+<script src="js/site.js"></script>
+</body>
+</html>

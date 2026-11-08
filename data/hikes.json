@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ma-on-shan-sunrise",
+    "title": "Ma On Shan sunrise",
+    "trail": "Ma On Shan Country Trail",
+    "date": "2026-11-21",
+    "time": "4:30am",
+    "meet": "University MTR station, Exit A",
+    "difficulty": "Hard",
+    "distance": "9 km",
+    "duration": "5 hours",
+    "image": "images/hike-maon.jpg",
+    "form": "https://forms.gle/",
+    "status": "open",
+    "notes": "Headlamp, 2L of water and a warm layer for the summit."
+  },
+  {
+    "id": "dragons-back-dec",
+    "title": "Dragon's Back and Big Wave Bay",
+    "trail": "Hong Kong Trail Stage 8",
+    "date": "2026-12-05",
+    "time": "9:00am",
+    "meet": "Shau Kei Wan MTR station, Exit A3",
+    "difficulty": "Easy",
+    "distance": "8.5 km",
+    "duration": "3 hours",
+    "image": "images/post-dragonsback.jpg",
+    "form": "https://forms.gle/",
+    "status": "open",
+    "notes": "Ends at the beach. Bring swimwear if you're brave."
+  },
+  {
+    "id": "lion-rock-oct",
+    "title": "Lion Rock at golden hour",
+    "trail": "MacLehose Trail Stage 5",
+    "date": "2026-10-17",
+    "time": "2:30pm",
+    "meet": "Wong Tai Sin MTR station, Exit B3",
+    "difficulty": "Moderate",
+    "distance": "6 km",
+    "duration": "3.5 hours",
+    "image": "images/post-lionrock.jpg",
+    "form": "",
+    "status": "closed",
+    "post": "lion-rock-golden-hour"
+  }
+]

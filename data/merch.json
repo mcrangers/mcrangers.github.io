@@ -1,0 +1,4 @@
+[
+  { "id": "tee", "name": "Trail tee", "price": "HK$120", "image": "images/merch-tee.jpg", "desc": "Heavyweight cotton in deep teal with the full logo on the front.", "sizes": "S, M, L, XL" },
+  { "id": "tote", "name": "Canvas tote", "price": "HK$80", "image": "images/merch-tote.jpg", "desc": "Fits a water bottle, snacks and a rain jacket.", "sizes": "One size" }
+]
