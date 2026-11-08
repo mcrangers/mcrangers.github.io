@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Map · MC Rangers</title>
+<meta name="description" content="Every MC Rangers hike and trip on one map. Tap a pin to read the story.">
+<meta name="theme-color" content="#0d2124">
+<meta property="og:title" content="Map · MC Rangers">
+<meta property="og:description" content="Every MC Rangers hike and trip on one map. Tap a pin to read the story.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="icons/icon-512.png">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="map">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="MC Rangers home"><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="hikes.html">Hikes</a><a href="map.html" aria-current="page" data-flag="showMap">Map</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
+      <a href="https://mcrangers.github.io/hike-bingo/" data-flag="showBingo" class="hidden">Trail Bingo</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="page-head"><svg class="ridge" viewBox="0 0 620 170" aria-hidden="true"><path d="M0 170 L120 70 L165 105 L250 20 L300 62 L340 40 L430 130 L470 100 L540 150 L620 120 L620 170Z" fill="#123033"/><path d="M250 20 L272 52 L258 50 L246 70 L238 38Z M120 70 L136 92 L124 90 L114 104Z" fill="#8fe3c8" opacity=".9"/><path d="M0 170 L70 128 L120 150 L210 92 L290 140 L360 104 L460 160 L560 126 L620 150 L620 170Z" fill="#1a3f44"/><path d="M0 162 C80 150 120 168 200 158 S340 150 420 162 560 150 620 160" fill="none" stroke="#a8c9f2" stroke-width="2" opacity=".6"/></svg><div class="wrap"><div class="kicker">Map</div><h1>Where we've been</h1><p>Every hike, paddle and trip we've done. Tap a pin to see it and read the story.</p></div></section>
+  <div class="stripe-band" aria-hidden="true"></div>
+  <section class="section tight"><div class="wrap">
+    <div class="chips" id="mapChips" role="group" aria-label="Filter the map"></div>
+    <div class="map-box full" data-map="full" role="region" aria-label="Map of MC Rangers trips"></div>
+    <ul class="map-list" id="mapList" aria-label="All places"></ul>
+  </div></section>
+</main>
+<footer class="site-foot">
+  <svg class="ridge-top" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V40 L1330 14 L1240 34 L1130 4 L1030 30 L940 18 L840 42 L730 10 L640 32 L520 6 L420 36 L300 16 L190 38 L90 12 L0 30Z" fill="var(--cream)"/></svg>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"><p>Hiking at CUHK and across Hong Kong.</p></div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="hikes.html">Hikes</a><a href="map.html" data-flag="showMap">Map</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
+        <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" data-link="email" class="hidden">Email us</a>
+      </nav>
+    </div>
+    <div class="foot-small"><span>&copy; <span data-year></span> MC Rangers</span><a href="admin.html">Admin</a></div>
+  </div>
+</footer>
+<script src="js/site.js"></script>
+<script src="js/map.js"></script>
+</body>
+</html>

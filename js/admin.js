@@ -11,6 +11,7 @@ const SETTINGS = [
   { key: "merchOpen", type: "toggle", title: "Merch orders open", desc: "Off shows “Orders closed” instead of the order button.", def: true },
   { key: "showPastHikes", type: "toggle", title: "Past hikes list", desc: "On the Hikes page, under upcoming hikes.", def: true },
   { key: "commentsEnabled", type: "toggle", title: "Blog comments", desc: "Comment section under each blog post (CUHK emails only).", def: true },
+  { key: "showMap", type: "toggle", title: "Map", desc: "Map page, menu link and the map on the home page. Pins come from hikes that have a location.", def: true },
   { key: "showBingo", type: "toggle", title: "Trail Bingo link", desc: "Adds Trail Bingo to the menu.", def: true },
   { section: "Words and links" },
   { key: "tagline", type: "textarea", title: "Home page tagline", desc: "Under the big headline." },
@@ -29,11 +30,12 @@ const SETTINGS = [
 /* ===== List editors ===== */
 const LISTS = {
   hikes: {
-    file: "hikes", title: "Hikes", add: "Add a hike", empty: "No hikes yet.",
-    sub: h => [h.date, h.status === "open" ? "Sign-ups open" : h.status].filter(Boolean).join(" · "),
+    file: "hikes", title: "Hikes and activities", add: "Add a trip", empty: "No hikes or trips yet.",
+    sub: h => [h.type && h.type !== "Hike" ? h.type : "", h.date, h.status === "open" ? "Sign-ups open" : h.status, h.location ? "" : "no map pin"].filter(Boolean).join(" · "),
     img: h => h.image,
     fields: [
-      { key: "title", label: "Hike name", type: "text", req: true },
+      { key: "title", label: "Name", type: "text", req: true },
+      { row: [{ key: "type", label: "Type", type: "select", options: ["Hike", "Rafting", "Kayaking", "Cycling", "Camping", "Beach", "Other"] }, { key: "location", label: "Map location", type: "text", help: "Paste coordinates like 22.352, 114.187 or a full Google Maps link. In Google Maps, long-press the spot to copy them." }] },
       { key: "trail", label: "Trail", type: "text", help: "e.g. MacLehose Trail Stage 5" },
       { row: [{ key: "date", label: "Date", type: "date", req: true }, { key: "time", label: "Meet time", type: "text", help: "e.g. 9:00am" }] },
       { key: "meet", label: "Meeting point", type: "text" },
@@ -249,6 +251,14 @@ function renderList(name) {
 }
 
 /* ---------- save ---------- */
+// Same parser as js/map.js: "lat, lng" or a Google Maps link with @lat,lng / q=lat,lng / !3dlat!4dlng
+function parseLoc(v) {
+  const s = String(v || "");
+  const m = s.match(/!3d(-?\d+(?:\.\d+)?)!4d(-?\d+(?:\.\d+)?)/) || s.match(/@(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)/) || s.match(/(-?\d{1,2}(?:\.\d+)?)\s*,\s*(-?\d{1,3}(?:\.\d+)?)/);
+  if (!m) return null;
+  const lat = +m[1], lng = +m[2];
+  return Math.abs(lat) <= 90 && Math.abs(lng) <= 180 ? [lat, lng] : null;
+}
 function problems() {
   for (const name of dirty) {
     if (name === "site") continue;
@@ -256,6 +266,7 @@ function problems() {
     for (const it of data[name]) {
       const miss = L.fields.flatMap(f => f.row || [f]).filter(f => f.req && !it[f.key]).map(f => f.label);
       if (miss.length) return `${L.title}: “${it.title || it.name || "Untitled"}” needs ${miss.join(" and ")}.`;
+      if (name === "hikes" && it.location && !parseLoc(it.location)) return `“${it.title || "Untitled"}”: the map location isn't coordinates. Use something like 22.352, 114.187.`;
     }
   }
   return "";

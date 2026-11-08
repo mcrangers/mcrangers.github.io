@@ -23,7 +23,7 @@
     <a class="brand" href="index.html" aria-label="MC Rangers home"><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="index.html" aria-current="page">Home</a><a href="hikes.html">Hikes</a><a href="blog.html">Blog</a><a href="merch.html">Merch</a>
+      <a href="index.html" aria-current="page">Home</a><a href="hikes.html">Hikes</a><a href="map.html" data-flag="showMap">Map</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
       <a href="https://mcrangers.github.io/hike-bingo/" data-flag="showBingo" class="hidden">Trail Bingo</a>
     </nav>
   </div>
@@ -54,6 +54,14 @@
     <div class="wrap">
       <div class="sec-head"><div><div class="kicker">From the trail</div><h2 id="blogH">Latest from the blog</h2></div><a class="more" href="blog.html">All posts &rarr;</a></div>
       <div class="posts" id="latestPosts"><div class="sk" style="grid-column:span 12;height:320px"></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="mapBand" data-flag="showMap" aria-labelledby="mapH">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="kicker">Where we've been</div><h2 id="mapH">The MC Rangers map</h2></div><a class="more" href="map.html">Open the full map &rarr;</a></div>
+      <p class="map-sub">Every hike and trip we've done. Tap a pin to read the story.</p>
+      <div class="map-box" data-map="home" role="region" aria-label="Map of MC Rangers trips"></div>
     </div>
   </section>
 
@@ -90,7 +98,7 @@
     <div class="foot-grid">
       <div><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"><p>Hiking at CUHK and across Hong Kong.</p></div>
       <nav class="foot-links" aria-label="Footer">
-        <a href="hikes.html">Hikes</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
+        <a href="hikes.html">Hikes</a><a href="map.html" data-flag="showMap">Map</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
         <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
         <a href="#" data-link="email" class="hidden">Email us</a>
       </nav>
@@ -99,5 +107,6 @@
   </div>
 </footer>
 <script src="js/site.js"></script>
+<script src="js/map.js"></script>
 </body>
 </html>

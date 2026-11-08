@@ -12,7 +12,9 @@
     "image": "images/hike-maon.jpg",
     "form": "https://forms.gle/",
     "status": "open",
-    "notes": "Headlamp, 2L of water and a warm layer for the summit."
+    "notes": "Headlamp, 2L of water and a warm layer for the summit.",
+    "type": "Hike",
+    "location": "22.3990, 114.2470"
   },
   {
     "id": "dragons-back-dec",
@@ -27,7 +29,9 @@
     "image": "images/post-dragonsback.jpg",
     "form": "https://forms.gle/",
     "status": "open",
-    "notes": "Ends at the beach. Bring swimwear if you're brave."
+    "notes": "Ends at the beach. Bring swimwear if you're brave.",
+    "type": "Hike",
+    "location": "22.2340, 114.2440"
   },
   {
     "id": "lion-rock-oct",
@@ -42,6 +46,25 @@
     "image": "images/post-lionrock.jpg",
     "form": "",
     "status": "closed",
-    "post": "lion-rock-golden-hour"
+    "post": "lion-rock-golden-hour",
+    "type": "Hike",
+    "location": "22.3520, 114.1870"
+  },
+  {
+    "id": "sai-kung-kayak-sep",
+    "title": "Kayaking in Sai Kung",
+    "trail": "Sai Kung Hoi Ha to Sharp Island",
+    "date": "2026-09-26",
+    "time": "10:00am",
+    "meet": "Sai Kung pier",
+    "difficulty": "Moderate",
+    "distance": "",
+    "duration": "4 hours",
+    "image": "",
+    "form": "",
+    "status": "closed",
+    "type": "Kayaking",
+    "location": "22.3600, 114.2950",
+    "notes": ""
   }
 ]

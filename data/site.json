@@ -10,6 +10,12 @@
   "showPastHikes": true,
   "showBingo": true,
   "commentsEnabled": true,
-  "firebase": { "apiKey": "", "authDomain": "", "projectId": "", "appId": "" },
-  "commentAdmins": []
+  "firebase": {
+    "apiKey": "",
+    "authDomain": "",
+    "projectId": "",
+    "appId": ""
+  },
+  "commentAdmins": [],
+  "showMap": true
 }

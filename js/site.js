@@ -113,8 +113,9 @@ function lightbox(src, alt) {
 (async () => {
   const [site, hikes, posts, merch] = await Promise.all([get("site"), get("hikes"), get("posts"), get("merch")]);
   const S = site || {}, H = hikes || [], P = byNewest(posts || []), M = merch || [];
-  window.MCR = { site: S, posts: P };
+  window.MCR = { site: S, posts: P, hikes: H };
   applySite(S);
+  window.dispatchEvent(new CustomEvent("mcr:data", { detail: window.MCR }));
 
   if (page === "index") {
     const up = upcoming(H).slice(0, 2);
@@ -128,7 +129,7 @@ function lightbox(src, alt) {
     const past = H.filter(isPast).sort((a, b) => String(b.date).localeCompare(String(a.date)));
     const ids = new Set(P.map(p => p.id));
     if (!past.length) $("#pastSec").classList.add("hidden");
-    $("#past").innerHTML = past.map(h => `<li><time datetime="${esc(h.date)}">${esc(fmtDate(h.date))}</time><div><b>${esc(h.title)}</b>${h.trail ? `<div class="t">${esc(h.trail)}</div>` : ""}</div>${h.post && ids.has(h.post) ? `<a href="post.html?p=${encodeURIComponent(h.post)}">Read the story &rarr;</a>` : "<span></span>"}</li>`).join("");
+    $("#past").innerHTML = past.map(h => `<li><time datetime="${esc(h.date)}">${esc(fmtDate(h.date))}</time><div><b>${esc(h.title)}</b>${h.trail || (h.type && h.type !== "Hike") ? `<div class="t">${esc([h.type && h.type !== "Hike" ? h.type : "", h.trail].filter(Boolean).join(" · "))}</div>` : ""}</div>${h.post && ids.has(h.post) ? `<a href="post.html?p=${encodeURIComponent(h.post)}">Read the story &rarr;</a>` : "<span></span>"}</li>`).join("");
   }
   if ($("#allPosts")) $("#allPosts").innerHTML = postGrid(P);
   if (page === "merch") {
@@ -151,6 +152,8 @@ function lightbox(src, alt) {
       $("#aMeta").textContent = [fmtDate(p.date, true), p.hike, p.author].filter(Boolean).join(" · ");
       if (p.cover) { $("#aCover").src = p.cover; $("#aCover").alt = p.title; } else $("#aCover").remove();
       $("#aBody").innerHTML = renderBody(p.body);
+      const trip = H.find(h => h.post === p.id && h.location);
+      if (trip && S.showMap !== false) $("#aMeta").insertAdjacentHTML("beforeend", ` · <a class="map-link" href="map.html?h=${encodeURIComponent(trip.id)}">See it on the map</a>`);
       const ph = (p.photos || []).filter(x => x && x !== p.cover);
       $("#aGallery").innerHTML = ph.map((src, i) => `<button type="button" data-src="${esc(src)}" aria-label="Open photo ${i + 1}"><img src="${esc(src)}" alt="" loading="lazy"></button>`).join("");
       $("#aGallery").querySelectorAll("button").forEach(b => b.onclick = () => lightbox(b.dataset.src, p.title));

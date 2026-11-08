@@ -19,3 +19,7 @@ Live site: https://mcrangers.github.io
 ## License
 
 MIT
+
+## Map
+
+The Map page and the home page map show a pin for every hike or trip in `data/hikes.json` that has a `location`. In Admin → Hikes, set the Type (Hike, Rafting, Kayaking and so on) and paste coordinates or a Google Maps link into Map location. Link the blog post and the pin opens the story. Turn the map off in Admin → Settings → Map. Map data © OpenStreetMap contributors.
