@@ -244,6 +244,25 @@
         transform: none;
       }
     }
+
+    main {
+  padding: 36px 0;
+}
+
+h1 {
+  font-size: clamp(40px, 7vw, 64px);
+  letter-spacing: -2px;
+}
+
+.intro {
+  margin: 18px 0 24px;
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 32px 0;
+  }
+}   
   </style>
 </head>
 
@@ -275,4 +294,30 @@
 
       <nav class="links" aria-label="MC Rangers apps">
 
-        <!-- Change
+  <a class="link-card primary" href="/hike-bingo/">
+    <div class="card-top">
+      <span class="card-label">Play together</span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </div>
+
+    <h2>Trail Bingo</h2>
+
+    <p class="card-description">
+      Open the bingo game and join the fun.
+    </p>
+  </a>
+
+  <a class="link-card" href="/hike-guide/">
+    <div class="card-top">
+      <span class="card-label">Find your way</span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </div>
+
+    <h2>Hike Photo Guide</h2>
+
+    <p class="card-description">
+      Open the trail photos and follow the checkpoints.
+    </p>
+  </a>
+
+</nav>
