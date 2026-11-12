@@ -1,112 +1,278 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MC Rangers · CUHK hiking club</title>
-<meta name="description" content="Hikes, trail stories and merch from MC Rangers, a CUHK student hiking club. Sign up for the next hike.">
-<meta name="theme-color" content="#0d2124">
-<meta property="og:title" content="MC Rangers · CUHK hiking club">
-<meta property="og:description" content="Hikes, trail stories and merch from MC Rangers, a CUHK student hiking club. Sign up for the next hike.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="icons/icon-512.png">
-<link rel="icon" type="image/png" href="icons/favicon-64.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta name="theme-color" content="#173e32">
+
+  <meta
+    name="description"
+    content="MC Rangers. Our new website is coming soon. Play Trail Bingo or open our hike photo guide."
+  >
+
+  <title>MC Rangers | Coming Soon</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f3f4ed;
+      --green: #173e32;
+      --muted: #65756b;
+      --border: #d9dfd2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      background: var(--background);
+      color: var(--green);
+      font-family:
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
+    .page {
+      width: min(100%, 760px);
+      min-height: 100svh;
+      margin: auto;
+      padding: 32px 24px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: 3px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 8px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #6b8b61;
+    }
+
+    main {
+      flex: 1;
+      padding: 72px 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 650px;
+
+      font-size: clamp(48px, 10vw, 88px);
+      font-weight: 800;
+      line-height: 1.03;
+      letter-spacing: -3px;
+    }
+
+    .intro {
+      max-width: 440px;
+      margin: 24px 0 38px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .link-card {
+      min-height: 175px;
+      padding: 24px;
+
+      display: flex;
+      flex-direction: column;
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      background: #ffffff;
+      color: var(--green);
+      text-decoration: none;
+
+      transition:
+        transform 160ms ease,
+        box-shadow 160ms ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px #173e3210;
+    }
+
+    .link-card:focus-visible {
+      outline: 3px solid #bc9037;
+      outline-offset: 5px;
+    }
+
+    .link-card.primary {
+      border-color: var(--green);
+      background: var(--green);
+      color: #ffffff;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .card-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .arrow {
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      letter-spacing: -0.5px;
+    }
+
+    .card-description {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+      opacity: 0.75;
+    }
+
+    footer {
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding: 24px 20px;
+      }
+
+      main {
+        padding: 56px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .links {
+        grid-template-columns: 1fr;
+      }
+
+      .link-card {
+        min-height: 155px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .link-card {
+        transition: none;
+      }
+
+      .link-card:hover {
+        transform: none;
+      }
+    }
+  </style>
 </head>
-<body data-page="index">
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-head">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="MC Rangers home"><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav class="nav" id="nav" aria-label="Main">
-      <a href="index.html" aria-current="page">Home</a><a href="hikes.html">Hikes</a><a href="map.html" data-flag="showMap">Map</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
-      <a href="https://mcrangers.github.io/hike-bingo/" data-flag="showBingo" class="hidden">Trail Bingo</a>
-    </nav>
-  </div>
-</header>
-<main id="main">
-  <section class="hero">
-    <div class="hero-art"><img src="images/hero-art.jpg" alt="" width="1600" height="900" fetchpriority="high"></div>
-    <div class="wrap">
-      <img class="hero-logo" src="icons/logo.png" alt="MC Rangers" width="640" height="317">
-      <h1>Find your next <em>trail.</em></h1>
-      <p class="lede" data-text="tagline"></p>
-      <div class="actions">
-        <a class="btn" href="hikes.html">See upcoming hikes</a>
-        <a class="btn ghost" href="blog.html">Read the blog</a>
-      </div>
-    </div>
-  </section>
-  <div class="stripe-band" aria-hidden="true"></div>
 
-  <section class="section" aria-labelledby="nextH">
-    <div class="wrap">
-      <div class="sec-head"><div><div class="kicker">Sign-ups open</div><h2 id="nextH">Next hikes</h2></div><a class="more" href="hikes.html">All hikes &rarr;</a></div>
-      <div class="hikes" id="nextHikes"><div class="sk" style="height:320px"></div></div>
-    </div>
-  </section>
+<body>
+  <div class="page">
 
-  <section class="section paper" aria-labelledby="blogH">
-    <div class="wrap">
-      <div class="sec-head"><div><div class="kicker">From the trail</div><h2 id="blogH">Latest from the blog</h2></div><a class="more" href="blog.html">All posts &rarr;</a></div>
-      <div class="posts" id="latestPosts"><div class="sk" style="grid-column:span 12;height:320px"></div></div>
-    </div>
-  </section>
+    <header>
+      <p class="brand">MC RANGERS</p>
 
-  <section class="section" id="mapBand" data-flag="showMap" aria-labelledby="mapH">
-    <div class="wrap">
-      <div class="sec-head"><div><div class="kicker">Where we've been</div><h2 id="mapH">The MC Rangers map</h2></div><a class="more" href="map.html">Open the full map &rarr;</a></div>
-      <p class="map-sub">Every hike and trip we've done. Tap a pin to read the story.</p>
-      <div class="map-box" data-map="home" role="region" aria-label="Map of MC Rangers trips"></div>
-    </div>
-  </section>
+      <span class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Website in progress
+      </span>
+    </header>
 
-  <section class="section night" id="merchBand" data-flag="showMerch" aria-labelledby="merchH">
-    <div class="wrap merch-band">
-      <div>
-        <div class="kicker">Merch</div>
-        <h2 id="merchH" style="font-size:var(--text-xl)">Wear the trail.</h2>
-        <p>Tees and totes with the full MC Rangers logo. Orders go through a short Google Form.</p>
-        <a class="btn" href="merch.html">Shop merch</a>
-      </div>
-      <div class="imgs" id="merchImgs"></div>
-    </div>
-  </section>
+    <main>
+      <p class="eyebrow">A little more adventure.</p>
 
-  <section class="section" id="about" aria-labelledby="aboutH">
-    <div class="wrap about">
-      <div>
-        <div class="kicker">About us</div>
-        <h2 id="aboutH" style="font-size:var(--text-xl);margin-bottom:18px">Hike with MC Rangers</h2>
-        <p data-text="about"></p>
-        <div class="links">
-          <a class="btn dark" href="#" data-link="joinForm" target="_blank" rel="noopener">Join the club</a>
-          <a class="btn ghost" href="#" data-link="instagram" target="_blank" rel="noopener">Follow on Instagram</a>
-        </div>
-      </div>
-      <div class="about-art"><img src="icons/logo.png" alt="" width="640" height="317" loading="lazy"></div>
-    </div>
-  </section>
-</main>
-<footer class="site-foot">
-  <svg class="ridge-top" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V40 L1330 14 L1240 34 L1130 4 L1030 30 L940 18 L840 42 L730 10 L640 32 L520 6 L420 36 L300 16 L190 38 L90 12 L0 30Z" fill="var(--cream)"/></svg>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div><img src="icons/logo-sm.png" alt="MC Rangers" width="240" height="119"><p>Hiking at CUHK and across Hong Kong.</p></div>
-      <nav class="foot-links" aria-label="Footer">
-        <a href="hikes.html">Hikes</a><a href="map.html" data-flag="showMap">Map</a><a href="blog.html">Blog</a><a href="merch.html" data-flag="showMerch">Merch</a>
-        <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" data-link="email" class="hidden">Email us</a>
-      </nav>
-    </div>
-    <div class="foot-small"><span>&copy; <span data-year></span> MC Rangers</span><a href="admin.html">Admin</a></div>
-  </div>
-</footer>
-<script src="js/site.js"></script>
-<script src="js/map.js"></script>
-</body>
-</html>
+      <h1>
+        New website.<br>
+        Coming soon.
+      </h1>
+
+      <p class="intro">
+        We’re getting our new home ready.
+        In the meantime, join the fun with Trail Bingo
+        or find your way with our hike photo guide.
+      </p>
+
+      <nav class="links" aria-label="MC Rangers apps">
+
+        <!-- Change
